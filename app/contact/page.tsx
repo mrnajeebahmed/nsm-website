@@ -31,7 +31,7 @@ export default function Contact() {
             <ul className="checklist" style={{ marginBottom: 28 }}>{expect.map((e) => <li key={e}>{e}</li>)}</ul>
             <div className="card" style={{ background: 'var(--canvas)' }}>
               <div className="label">Haven’t assessed yet?</div>
-              <p>Take the 3-minute readiness assessment first. It makes the call far more productive.</p>
+              <p>Take the 10-minute AI readiness assessment first. It makes the call far more productive.</p>
               <Link href="/assess?tool=readiness" className="btn btn-secondary btn-sm">Start assessment <Icon name="arrow" size={16} /></Link>
             </div>
             <p style={{ marginTop: 20 }}>Prefer email? <a href={`mailto:${site.email}`}>{site.email}</a></p>

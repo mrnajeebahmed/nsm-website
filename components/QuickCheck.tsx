@@ -47,7 +47,7 @@ export function QuickCheck() {
           </div>
           <p style={{ fontSize: '.93rem' }}>{verdict.d}</p>
           <div className="btn-row">
-            <Link href="/assess?tool=readiness" className="btn btn-primary btn-sm">Get full 10-question report →</Link>
+            <Link href="/assess?tool=readiness" className="btn btn-primary btn-sm">Get your full 5-pillar report →</Link>
             <button className="btn btn-ghost btn-sm" onClick={() => { setI(0); setScore(0); }}>Restart</button>
           </div>
         </div>

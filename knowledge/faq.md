@@ -13,4 +13,4 @@ No. The AI Opportunity Sprint includes a data readiness check. Many first projec
 Typical results: 5x faster speed-to-lead with automated lead intake, 80% less manual data entry with document processing, 60–75% ticket deflection with a grounded customer concierge, and new-hire ramp time cut in half with an internal SOP copilot. Most production builds target payback within 3–9 months.
 
 ## How do we get started?
-Take the 3-minute AI Readiness Assessment or the ROI calculator on the website, then book a free 20-minute strategy call with an NSM architect.
+Take the 10-minute AI Readiness Assessment (oAIRI), score a project in the Decision Engine, or use the ROI calculator on the website, then book a free 20-minute strategy call with an NSM architect.

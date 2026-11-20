@@ -49,7 +49,8 @@ export function ContactForm() {
         <div className="result-metric" style={{ marginBottom: 20, padding: 14 }}>
           <div className="label">Attached from your self-assessment</div>
           <div className="tags" style={{ marginTop: 6 }}>
-            {context.assessment && <span className="tag teal">Readiness {context.assessment.overall}/100 · {context.assessment.tier}</span>}
+            {context.assessment && <span className="tag teal">Readiness {context.assessment.overall.toFixed(2)}/5 · L{context.assessment.level} {context.assessment.levelName} · gate {context.assessment.gate}</span>}
+            {context.project && <span className="tag teal">Project: {context.project.name} ({Math.round(context.project.pct)}%)</span>}
             {context.roi && <span className="tag teal">Est. savings {fmtMoney(context.roi.annualSavings)}/yr</span>}
             {context.blueprint && <span className="tag teal">{context.blueprint.title}</span>}
           </div>

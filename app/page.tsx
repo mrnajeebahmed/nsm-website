@@ -14,7 +14,7 @@ export default function Home() {
               <h1>Solutions for Growing Businesses. <span className="accent">Built to Scale Intelligently.</span></h1>
               <p className="lead">From identifying the right opportunity to building and operating the systems behind it, we help bold businesses unlock AI at scale, automate core workflows, and launch future-ready operations.</p>
               <div className="btn-row">
-                <Link href="/assess?tool=readiness" className="btn btn-primary">Take the 3-Minute AI Readiness Assessment <Icon name="arrow" size={18} /></Link>
+                <Link href="/assess?tool=readiness" className="btn btn-primary">Take the AI Readiness Assessment <Icon name="arrow" size={18} /></Link>
                 <Link href="/solutions" className="btn btn-secondary">Explore Use Cases</Link>
               </div>
             </div>
@@ -71,7 +71,7 @@ export default function Home() {
           <div className="cta-banner">
             <div className="eyebrow" style={{ color: '#5EEAD4' }}>Interactive assessment hub</div>
             <h2>Not sure where AI fits in your business?</h2>
-            <p className="lead">Use our self-service diagnostic tools to benchmark your AI maturity, calculate potential labor savings, and generate a custom use-case shortlist in under 3 minutes.</p>
+            <p className="lead">Benchmark your organization on the five AIRI readiness pillars, score and rank your candidate AI projects, and size the savings. No sales call required.</p>
             <div className="btn-row" style={{ position: 'relative', zIndex: 1 }}>
               <Link href="/assess" className="btn btn-primary">Launch Interactive Assessment Hub <Icon name="arrow" size={18} /></Link>
               <Link href="/assess?tool=roi" className="btn btn-secondary">Open ROI Calculator</Link>

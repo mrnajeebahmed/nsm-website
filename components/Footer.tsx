@@ -24,6 +24,7 @@ export function Footer() {
             <h4>Tools</h4>
             <ul>
               <li><Link href="/assess?tool=readiness">AI Readiness Assessment</Link></li>
+              <li><Link href="/assess?tool=project">Project Decision Engine</Link></li>
               <li><Link href="/assess?tool=roi">ROI Calculator</Link></li>
               <li><Link href="/assess?tool=recommender">Find Your First AI Win</Link></li>
             </ul>

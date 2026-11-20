@@ -11,14 +11,20 @@ export default function Assess() {
         <div className="container">
           <div className="eyebrow">AI readiness & ROI hub</div>
           <h1>Evaluate Your AI <span className="accent">Transformation Needs.</span></h1>
-          <p className="lead">Interactive self-service tools to benchmark your readiness, estimate your automation ROI, and discover your highest-leverage use cases. No sales call required.</p>
+          <p className="lead">Benchmark your organization on the five AIRI pillars, score your first AI project, and size the savings. No sales call required.</p>
         </div>
       </section>
       <section className="section-sm" style={{ paddingTop: 0 }}>
         <div className="container">
           <Suspense fallback={<div className="card">Loading tools…</div>}><AssessHub /></Suspense>
           <p className="no-print" style={{ fontSize: '.85rem', marginTop: 16, textAlign: 'center' }}>
-            Your answers stay in your browser. They’re shared with our AI Advisor only when you choose to discuss them.
+            Your answers stay in your browser. They’re shared with our AI Advisor only when you open the chat.
+          </p>
+          <p className="attribution">
+            Readiness assessment and Decision Engine adapted from the AIRI Framework v3.2 (oAIRI) and AIRI Decision Engine v3.0 by Laurence Liew,{' '}
+            <a href="https://airi.foundation" target="_blank" rel="noopener noreferrer">airi.foundation</a>, licensed under{' '}
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Wording lightly edited for US English.
+            NSM Technologies is not affiliated with airi.foundation or AI Singapore. Estimates are directional; an NSM architect can validate them with you in a 20-minute strategy session.
           </p>
         </div>
       </section>

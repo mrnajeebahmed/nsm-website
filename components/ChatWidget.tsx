@@ -76,7 +76,8 @@ export function ChatWidget() {
   };
 
   const ctxChips = [
-    context.assessment && `Readiness: ${context.assessment.overall}/100 (${context.assessment.tier})`,
+    context.assessment && `Readiness: L${context.assessment.level} ${context.assessment.levelName} (${context.assessment.gate})`,
+    context.project && `Project: ${Math.round(context.project.pct)}% DE`,
     context.roi && `ROI: $${Math.round(context.roi.annualSavings / 1000)}k/yr`,
     context.blueprint && `Blueprint: ${context.blueprint.title}`,
   ].filter(Boolean) as string[];
