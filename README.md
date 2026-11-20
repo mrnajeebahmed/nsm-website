@@ -48,6 +48,10 @@ Change `DEFAULT_LLM_PROVIDER` (`anthropic` \| `openai` \| `gemini`) and `LLM_FAL
 - `calculate_roi_estimate(team_size, manual_hours, hourly_rate, efficiency?)` → same model as the on-page calculator.
 - `book_strategy_call(name, email, company, summary_of_needs)` → validated, POSTed to `LEAD_WEBHOOK_URL` (HubSpot/Salesforce/n8n/Make/Zapier), returns `BOOKING_URL`.
 
+## Hosting
+- **Vercel:** see `DEPLOYMENT.md`.
+- **GoDaddy (cPanel / Node.js hosting, e.g. Deluxe):** see `DEPLOY-GODADDY.md`. `npm run package:cpanel` builds the upload.
+
 ## Production checklist
 - **Rate limiting** is in-memory per instance → back with Redis/Upstash on serverless or multi-instance.
 - **RAG**: BM25 is right for ~dozens of docs. For larger corpora (case studies, blogs), implement `Retriever` on pgvector/Pinecone with embeddings.

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "start:node": "node server.js",
+    "package:cpanel": "bash scripts/package-cpanel.sh"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.12.0",
