@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 
 import { usePathname } from 'next/navigation';
 import { useAdvisor } from './AdvisorProvider';
 import { Icon } from './Icon';
+import { LogoMark } from './Logo';
 
 type Msg = { role: 'user' | 'assistant'; content: string; meta?: string };
 
@@ -93,7 +94,7 @@ export function ChatWidget() {
   return (
     <section className="chat-panel no-print" role="dialog" aria-label="NSM AI Advisor">
       <header className="chat-head">
-        <div className="logo-mark" aria-hidden>AI</div>
+        <LogoMark size={36} />
         <div><strong>NSM AI Advisor</strong><span>Model-agnostic · grounded in NSM services</span></div>
         <button onClick={closeChat} aria-label="Close chat"><Icon name="x" size={18} /></button>
       </header>

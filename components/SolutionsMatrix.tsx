@@ -1,12 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useCaseFilters, useCases, type UseCaseFilter } from '@/lib/content';
 import { useAdvisor } from './AdvisorProvider';
 
 export function SolutionsMatrix() {
+  const params = useSearchParams();
   const [filter, setFilter] = useState<UseCaseFilter>('All');
   const { openChat } = useAdvisor();
+  useEffect(() => {
+    const f = params.get('f');
+    if (f && (useCaseFilters as readonly string[]).includes(f)) setFilter(f as UseCaseFilter);
+    const hash = window.location.hash.slice(1);
+    if (hash) setTimeout(() => document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+  }, [params]);
   const list = filter === 'All' ? useCases : useCases.filter((u) => u.categories.includes(filter));
 
   return (
@@ -20,7 +28,8 @@ export function SolutionsMatrix() {
       </div>
       <div className="grid grid-2">
         {list.map((u) => (
-          <article key={u.id} className="card card-hover usecase">
+          <article key={u.id} id={u.id} className="card media-card usecase" style={{ scrollMarginTop: 150 }}>
+            <span className="media usecase-media"><img src={u.image} alt="" loading="lazy" /></span>
             <div className="tags" style={{ marginBottom: 12 }}>{u.categories.map((c) => <span key={c} className="tag">{c}</span>)}</div>
             <h3>{u.title}</h3>
             <div className="uc-block"><div className="label">The bottleneck</div><p>{u.bottleneck}</p></div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { PageHero } from '@/components/PageHero';
 import Link from 'next/link';
 import { ContactForm } from '@/components/ContactForm';
 import { Icon } from '@/components/Icon';
@@ -16,17 +17,12 @@ const expect = [
 export default function Contact() {
   return (
     <>
-      <section className="page-hero hero">
-        <div className="container">
-          <div className="eyebrow">Contact & strategy call</div>
-          <h1>Let’s Map Your <span className="accent">First AI Win.</span></h1>
-          <p className="lead">Tell us about your workflow. If you’ve used our assessment tools, your results are attached automatically so we can skip the basics.</p>
-        </div>
-      </section>
-      <section className="section-sm" style={{ paddingTop: 0 }}>
+      <PageHero image="/images/page-contact.webp" eyebrow="Contact & strategy call" title={<>Let’s Map Your <span className="accent-light">First AI Win.</span></>} lead="Tell us about your workflow. If you’ve used our assessment tools, your results are attached automatically so we can skip the basics." />
+      <section className="section-sm">
         <div className="container split" style={{ alignItems: 'start' }}>
           <div className="card" style={{ padding: 'clamp(20px, 4vw, 36px)' }}><ContactForm /></div>
           <div>
+            <div className="media-card rounded-media" style={{ marginBottom: 24 }}><span className="media media-wide"><img src="/images/tech-robot-learning.webp" alt="" loading="lazy" /></span></div>
             <h3>What to expect</h3>
             <ul className="checklist" style={{ marginBottom: 28 }}>{expect.map((e) => <li key={e}>{e}</li>)}</ul>
             <div className="card" style={{ background: 'var(--canvas)' }}>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { PageHero } from '@/components/PageHero';
 import Link from 'next/link';
 import { deliverySteps, engagementModels } from '@/lib/content';
 import { Icon } from '@/components/Icon';
@@ -14,14 +15,8 @@ const guarantees = [
 export default function Approach() {
   return (
     <>
-      <section className="page-hero hero">
-        <div className="container">
-          <div className="eyebrow">How we work</div>
-          <h1>Built for Speed, Transparency, <span className="accent">and Ownership.</span></h1>
-          <p className="lead">A proven, outcome-scoped delivery model that gets working systems into your operations in weeks, with no black boxes.</p>
-        </div>
-      </section>
-      <section className="section-sm" style={{ paddingTop: 0 }}>
+      <PageHero image="/images/page-approach.webp" eyebrow="How we work" title={<>Built for Speed, Transparency, <span className="accent-light">and Ownership.</span></>} lead="A proven, outcome-scoped delivery model that gets working systems into your operations in weeks, with no black boxes." />
+      <section className="section-sm">
         <div className="container">
           <div className="card" style={{ padding: 'clamp(24px, 4vw, 48px)' }}>
             <h2 style={{ fontSize: '1.5rem', marginBottom: 32 }}>Our 6-step delivery lifecycle</h2>
@@ -33,7 +28,7 @@ export default function Approach() {
           </div>
         </div>
       </section>
-      <section className="section">
+      <section className="section" id="engagement" style={{ scrollMarginTop: 120 }}>
         <div className="container">
           <div className="section-head"><div className="eyebrow">Engagement models</div><h2>Transparent ways to work together</h2></div>
           <div className="grid grid-3" style={{ alignItems: 'stretch' }}>
@@ -51,7 +46,13 @@ export default function Approach() {
       </section>
       <section className="section section-alt">
         <div className="container">
-          <div className="section-head center"><div className="eyebrow">Ownership guarantees</div><h2>No vendor lock-in. Ever.</h2></div>
+          <div className="split" style={{ marginBottom: 40 }}>
+            <div>
+              <div className="eyebrow">Ownership guarantees</div><h2>No vendor lock-in. Ever.</h2>
+              <p className="lead">Everything we build is yours: deployed in your cloud, documented, and portable across AI providers.</p>
+            </div>
+            <div className="media-card rounded-media"><span className="media media-wide"><img src="/images/section-office.webp" alt="Modern open-plan office" loading="lazy" /></span></div>
+          </div>
           <div className="grid grid-3">
             {guarantees.map((g) => (
               <div key={g.t} className="card"><div className="icon-tile teal"><Icon name={g.icon} /></div><h3>{g.t}</h3><p>{g.d}</p></div>

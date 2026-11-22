@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { PageHero } from '@/components/PageHero';
+import { Suspense } from 'react';
 import { SolutionsMatrix } from '@/components/SolutionsMatrix';
 
 export const metadata: Metadata = { title: 'Solutions & Use Cases', description: 'Filter real AI and automation use cases by department and industry.' };
@@ -6,15 +8,9 @@ export const metadata: Metadata = { title: 'Solutions & Use Cases', description:
 export default function Solutions() {
   return (
     <>
-      <section className="page-hero hero">
-        <div className="container">
-          <div className="eyebrow">Solutions matrix</div>
-          <h1>Real AI Use Cases for <span className="accent">Growing Businesses.</span></h1>
-          <p className="lead">Filter by your department or industry to see how intelligent automation solves everyday operational bottlenecks.</p>
-        </div>
-      </section>
-      <section className="section-sm" style={{ paddingTop: 0 }}>
-        <div className="container"><SolutionsMatrix /></div>
+      <PageHero image="/images/page-solutions.webp" eyebrow="Solutions matrix" title={<>Real AI Use Cases for <span className="accent-light">Growing Businesses.</span></>} lead="Filter by your department or industry to see how intelligent automation solves everyday operational bottlenecks." />
+      <section className="section-sm">
+        <div className="container"><Suspense fallback={null}><SolutionsMatrix /></Suspense></div>
       </section>
     </>
   );

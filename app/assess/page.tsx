@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { PageHero } from '@/components/PageHero';
 import { Suspense } from 'react';
 import { AssessHub } from '@/components/AssessHub';
 
@@ -7,14 +8,8 @@ export const metadata: Metadata = { title: 'AI Readiness & ROI Hub', description
 export default function Assess() {
   return (
     <>
-      <section className="page-hero hero no-print">
-        <div className="container">
-          <div className="eyebrow">AI readiness & ROI hub</div>
-          <h1>Evaluate Your AI <span className="accent">Transformation Needs.</span></h1>
-          <p className="lead">Benchmark your organization on the five AIRI pillars, score your first AI project, and size the savings. No sales call required.</p>
-        </div>
-      </section>
-      <section className="section-sm" style={{ paddingTop: 0 }}>
+      <PageHero className="no-print" image="/images/page-assess.webp" eyebrow="AI readiness & ROI hub" title={<>Evaluate Your AI <span className="accent-light">Transformation Needs.</span></>} lead="Benchmark your organization on the five AIRI pillars, score your first AI project, and size the savings. No sales call required." />
+      <section className="section-sm">
         <div className="container">
           <Suspense fallback={<div className="card">Loading tools…</div>}><AssessHub /></Suspense>
           <p className="no-print" style={{ fontSize: '.85rem', marginTop: 16, textAlign: 'center' }}>

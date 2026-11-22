@@ -1,10 +1,9 @@
 import Link from 'next/link';
+import { PageHero } from '@/components/PageHero';
 export default function NotFound() {
   return (
-    <section className="page-hero hero"><div className="container">
-      <div className="eyebrow">404</div><h1>Page not found</h1>
-      <p className="lead">The page you’re looking for doesn’t exist.</p>
-      <Link href="/" className="btn btn-primary">Back to home</Link>
-    </div></section>
+    <PageHero image="/images/tech-network.webp" eyebrow="404" title="Page not found" lead="The page you’re looking for doesn’t exist.">
+      <div className="btn-row" style={{ marginTop: 24 }}><Link href="/" className="btn btn-primary">Back to home</Link></div>
+    </PageHero>
   );
 }

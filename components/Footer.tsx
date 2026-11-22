@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { site } from '@/lib/content';
+import { Logo } from './Logo';
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Link href="/" className="logo"><span className="logo-mark">NSM</span><span>NSM Technologies<small>AI DIGITAL SOLUTIONS</small></span></Link>
+            <Logo tone="light" />
             <p style={{ marginTop: 16, maxWidth: 340, fontSize: '.92rem' }}>
               Your strategic partner for AI digital solutions. From first opportunity to production operations, built for growing businesses.
             </p>
