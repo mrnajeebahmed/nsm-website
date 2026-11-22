@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { coreCapabilities, deliverySteps, trustPillars, useCases } from '@/lib/content';
+import { coreCapabilities, trustPillars, useCases } from '@/lib/content';
+import { DeliverySteps } from '@/components/DeliverySteps';
 import { Icon } from '@/components/Icon';
 import { QuickCheck } from '@/components/QuickCheck';
 import { TechCarousel } from '@/components/TechCarousel';
@@ -30,11 +31,11 @@ export default function Home() {
               <span className="media"><img src="/images/hero-ai.webp" alt="Abstract 3D rendering of the letters AI" /></span>
             </div>
             <div className="float-card float-a">
-              <span className="float-icon"><Icon name="spark" size={18} /></span>
+              <span className="float-icon"><Icon name="trend" size={20} /></span>
               <div><b>5x</b><span>faster speed-to-lead</span></div>
             </div>
             <div className="float-card float-b">
-              <span className="float-icon teal"><Icon name="layers" size={18} /></span>
+              <span className="float-icon teal"><Icon name="layers" size={20} /></span>
               <div><b>Model-agnostic</b><span>OpenAI · Claude · Gemini</span></div>
             </div>
           </div>
@@ -117,7 +118,7 @@ export default function Home() {
       <section className="section-sm">
         <div className="container">
           <div className="cta-banner cta-image">
-            <img className="cta-bg" src="/images/tech-network.webp" alt="" loading="lazy" />
+            <img className="cta-bg" src="/images/tech-network.webp" alt="" />
             <div className="cta-content split">
               <div>
                 <div className="eyebrow eyebrow-light">Interactive assessment hub</div>
@@ -140,11 +141,7 @@ export default function Home() {
             <div className="eyebrow">Delivery framework</div>
             <h2>Six steps from bottleneck to production</h2>
           </div>
-          <div className="stepper">
-            {deliverySteps.map((s) => (
-              <div key={s.num} className="step"><div className="step-dot">{s.num}</div><div><h3>{s.title}</h3><p>{s.body}</p></div></div>
-            ))}
-          </div>
+          <DeliverySteps />
         </div>
       </section>
 
@@ -159,9 +156,9 @@ export default function Home() {
               <Link key={u.id} href={`/solutions#${u.id}`} className="card media-card image-card">
                 <span className="media"><img src={u.image} alt="" loading="lazy" /></span>
                 <span className="image-card-body">
-                  <h3 style={{ fontSize: '1.02rem' }}>{u.title}</h3>
-                  <p>{u.solution.slice(0, 110)}…</p>
-                  <span className="tag teal">{u.impact}</span>
+                  <h3 style={{ fontSize: '1.05rem' }}>{u.title}</h3>
+                  <p className="clamp-3">{u.solution}</p>
+                  <span className="impact-line"><Icon name="trend" size={16} /> {u.impact}</span>
                 </span>
               </Link>
             ))}

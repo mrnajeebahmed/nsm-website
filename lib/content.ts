@@ -155,13 +155,13 @@ export const useCases: UseCase[] = [
 ];
 
 export const deliverySteps = [
-  { num: '01', title: 'Discover', body: 'Identify high-ROI bottlenecks' },
-  { num: '02', title: 'Architect', body: 'Design a secure, model-agnostic blueprint' },
-  { num: '03', title: 'Prototype', body: 'Validate with real business data in weeks' },
-  { num: '04', title: 'Integrate', body: 'Connect to CRM, ERP and APIs' },
-  { num: '05', title: 'Govern', body: 'Guardrails, accuracy evals & human-in-the-loop' },
-  { num: '06', title: 'Operate & Scale', body: 'Handover, team training & continuous optimization' },
-];
+  { num: '01', icon: 'target', title: 'Discover', body: 'Identify high-ROI bottlenecks' },
+  { num: '02', icon: 'layers', title: 'Architect', body: 'Design a secure, model-agnostic blueprint' },
+  { num: '03', icon: 'rocket', title: 'Prototype', body: 'Validate with real business data in weeks' },
+  { num: '04', icon: 'flow', title: 'Integrate', body: 'Connect to CRM, ERP and APIs' },
+  { num: '05', icon: 'shield', title: 'Govern', body: 'Guardrails, accuracy evals & human-in-the-loop' },
+  { num: '06', icon: 'gauge', title: 'Operate & Scale', body: 'Handover, team training & continuous optimization' },
+] as const;
 
 export const engagementModels = [
   {

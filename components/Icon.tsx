@@ -20,6 +20,7 @@ const paths: Record<string, string> = {
   target: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm0-4a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z',
   briefcase: 'M3 8h18v12H3zM8 8V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 13h18',
   mail: 'M3 6h18v12H3zM3 7l9 6 9-6',
+  trend: 'M3 17l6-6 4 4 8-8M15 7h6v6',
   chevron: 'm6 9 6 6 6-6',
   left: 'm15 18-6-6 6-6',
   right: 'm9 18 6-6-6-6',

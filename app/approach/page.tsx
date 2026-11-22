@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { PageHero } from '@/components/PageHero';
 import Link from 'next/link';
-import { deliverySteps, engagementModels } from '@/lib/content';
+import { engagementModels } from '@/lib/content';
+import { DeliverySteps } from '@/components/DeliverySteps';
 import { Icon } from '@/components/Icon';
 
 export const metadata: Metadata = { title: 'How We Work', description: 'Six-step delivery lifecycle, transparent engagement models and full client ownership, with no vendor lock-in.' };
@@ -18,14 +19,8 @@ export default function Approach() {
       <PageHero image="/images/page-approach.webp" eyebrow="How we work" title={<>Built for Speed, Transparency, <span className="accent-light">and Ownership.</span></>} lead="A proven, outcome-scoped delivery model that gets working systems into your operations in weeks, with no black boxes." />
       <section className="section-sm">
         <div className="container">
-          <div className="card" style={{ padding: 'clamp(24px, 4vw, 48px)' }}>
-            <h2 style={{ fontSize: '1.5rem', marginBottom: 32 }}>Our 6-step delivery lifecycle</h2>
-            <div className="stepper">
-              {deliverySteps.map((s) => (
-                <div key={s.num} className="step"><div className="step-dot">{s.num}</div><div><h3>{s.title}</h3><p>{s.body}</p></div></div>
-              ))}
-            </div>
-          </div>
+          <div className="section-head"><div className="eyebrow">Delivery lifecycle</div><h2>Six steps from bottleneck to production</h2></div>
+          <DeliverySteps />
         </div>
       </section>
       <section className="section" id="engagement" style={{ scrollMarginTop: 120 }}>

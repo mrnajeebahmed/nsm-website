@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  devIndicators: false,
   // Knowledge base markdown is read at runtime by the chat route.
   outputFileTracingIncludes: { '/api/chat': ['./knowledge/**/*'] },
   async headers() {
