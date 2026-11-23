@@ -1,4 +1,13 @@
-# Deploying to GoDaddy cPanel shared hosting
+# Deploying to GoDaddy
+
+## Option A: GoDaddy Node.js app hosting ("My Apps" → Folder upload)
+1. Run `npm run package:cpanel` (or use the zip Claude provides). Upload **`dist/nsm-website-godaddy.zip`** exactly as it is.
+   `package.json` must be at the top level of the upload. Do **not** upload the source zip `nsm-website.zip` or a folder that contains another `nsm-website/` folder.
+2. The bundle is prebuilt: GoDaddy runs `npm install`, `npm run build` (a no-op) and `npm start` (`node server.js`, which listens on `$PORT`).
+3. Under **Manage Secrets**, add `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`, `LEAD_WEBHOOK_URL`; as variables add `DEFAULT_LLM_PROVIDER`, `BOOKING_URL`, `NEXT_PUBLIC_SITE_URL`.
+4. Click **Update Preview**, check the preview URL, then **Publish to Live** and connect your custom domain.
+
+## Option B: cPanel shared hosting
 
 The site is a Next.js app with server features (AI chatbot, contact form, lead capture), so it runs as a **Node.js application** through cPanel's **Setup Node.js App**. Shared hosting usually lacks the memory to build Next.js, so you upload a **prebuilt** package and cPanel only installs the runtime packages.
 
@@ -13,7 +22,7 @@ On any Linux/macOS machine with Node 22 (or ask Claude to run it):
 npm ci
 npm run package:cpanel
 ```
-This creates `dist/nsm-website-cpanel.zip` (~4 MB): the prebuilt `.next` folder, `server.js`, `knowledge/`, `public/`, `package.json` and `package-lock.json`. It contains no `node_modules`.
+This creates `dist/nsm-website-godaddy.zip` (same file also saved as `nsm-website-cpanel.zip`) (~4 MB): the prebuilt `.next` folder, `server.js`, `knowledge/`, `public/`, `package.json` and `package-lock.json`. It contains no `node_modules`.
 
 ## 2. Upload
 1. cPanel → **File Manager**. In your home directory (not inside `public_html`), create a folder, e.g. `nsm-website`.
